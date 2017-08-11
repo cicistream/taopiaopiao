@@ -2,21 +2,21 @@
 	<div>
 		<div class="filtrate-detail">
 			<div class="area">
-			    <p><span class="f-title">区域</span><span :class="{'active':choosen1}">{{areaChoose}}</span></p>
+			    <p><span class="f-title">区域</span><span :class="{'active':area}">{{areaChoose}}</span></p>
 				<ul class="f-choose">
 					<li class="area-item1" v-for="(area,index) in address" @click="chooseArea(address,index)">{{area}}</li>
 				</ul>
 			</div>
 			<div class="area">
-				<p><span class="f-title">特色</span><span :class="{'active':choosen2}">{{featureChoose}}</span></p>
+				<p><span class="f-title">特色</span><span :class="{'active':fea}">{{featureChoose}}</span></p>
 				<ul class="f-choose">
 					<li class="area-item2" v-for="(feature,index) in features" @click="chooseFeature(features,index)">{{feature}}</li>
 				</ul>
 			</div>
 			<div class="filtrate-btn">
 			    <div class="line"></div>
-		    	<router-link to="/cinema/cinemaAll" class="back"><p>取消筛选</p></router-link>
-			    <router-link to="/cinema/cinemaAll" class="ok" @click.native=chooseIt><p>确定</p></router-link>
+		    	<router-link to="/cinema/cinemaAll" class="back" @click.native=cancelIt><p>取消筛选</p></router-link>
+			    <router-link :to="{path:'/cinema/cinemaAll',query: {areaChoose: areaChoose,feaChoose: featureChoose,choose: choosen,area: area,fea: fea}}" class="ok" @click.native=chooseIt><p>确定</p></router-link>
 			</div>
 		</div>
 	</div>
@@ -24,76 +24,85 @@
 <script type="text/javascript">
 	export default{
 		mounted:function(){
-			this.areaChoose=sessionStorage.area;
-			this.featureChoose=sessionStorage.fea;
-			this.choosen1=sessionStorage.choose1;
-			this.choosen2=sessionStorage.choose2;
-			var area=document.getElementsByClassName("area-item1");
-			var fea=document.getElementsByClassName("area-item2");
-            if(sessionStorage.choose1){
-            	area[sessionStorage.areaIndex].style.color="#ff4d64";
-            	area[sessionStorage.areaIndex].style.borderColor="#ff4d64";
-            }
-            if(sessionStorage.choose2){
-            	fea[sessionStorage.areaIndex].style.color="#ff4d64";
-            	fea[sessionStorage.areaIndex].style.borderColor="#ff4d64";
+            if(sessionStorage.area>0){ 
+            	this.areaChoose=this.address[sessionStorage.area];
+                this.area=true;
+                var area =document.getElementsByClassName("area-item1");
+                this.addClass(area[sessionStorage.area],"active"); 
+             }
+            if(sessionStorage.fea>0){
+            	this.fea=true;
+                this.featureChoose=this.features[sessionStorage.fea];
+                var fea =document.getElementsByClassName("area-item2");
+                this.addClass(fea[sessionStorage.fea],"active"); 
             }
 		},
 		methods:{
-			chooseIt:function(){
-				sessionStorage.choose=true;
-				sessionStorage.choose1=true;
-				sessionStorage.choose2=true;
-			},
-			addClass: function(item,className){      
+			addClass: function(element,value){      
 				if(!element.className){ 
 					element.className=value; 
 			    } 
 				else{ 
-					newClassName=element.className; 
-					newClassName+=""; 
+					var newClassName=element.className; 
+					newClassName+=" "; 
 					newClassName+=value; 
+					newClassName+=" "; 
 					element.className=newClassName; 
 				} 
 			},
+			removeClass: function(obj, cls) {  
+			    if (this.hasClass(obj, cls)) {  
+			        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+			        var ci='';  
+			        obj.className = obj.className.replace(reg,ci);  
+			    }  
+			},  
 			hasClass: function(obj, cls) {  
 			    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+			},
+			toggleClass: function(obj,cls){  
+			    if(this.hasClass(obj,cls)){  
+			        this.removeClass(obj, cls);  
+			    }else{  
+			        this.addClass(obj, cls);  
+			    }  
+			},  
+			cancelIt:function(){
+				sessionStorage.clear();
+				this.$route.query.choose=false;
 			}, 
+			chooseIt:function(){
+                if(!this.area) this.areaChoose='';
+                if(!this.fes) this.featureChoose='';
+				if(sessionStorage.area!=0||sessionStorage.fea!=0)
+                this.choosen=true;
+ 			},
             chooseArea: function(address,index){
+            	this.area=true;
             	var area=document.getElementsByClassName("area-item1");
             	for (var i = area.length - 1; i >= 0; i--) {
-            		area[i].style.color="#908ca3";
-            		area[i].style.borderColor="#ccc";
+            		area[index].className="area-item1";
             	}
                 this.areaChoose=address[index];
-                this.choosen1=true;
-                sessionStorage.setItem("area",this.areaChoose);
-                sessionStorage.setItem("areaIndex",index);
-            	console.log(sessionStorage.area);
-            	// addClass(area[index],"active");
-                area[index].style.color="#ff4d64";
-                area[index].style.borderColor="#ff4d64";
+                sessionStorage.area=index;
+            	this.toggleClass(area[index],"active");
             },
             chooseFeature: function(features,index){
+            	this.fea=true;
             	var fea=document.getElementsByClassName("area-item2");
             	for (var i = fea.length - 1; i >= 0; i--) {
-            		fea[i].style.Color="active";
-            		fea[i].style.borderColor="#ccc";
+            		this.removeClass(fea[index],"active");
             	}
                 this.featureChoose=features[index];
-                this.choosen2=true;
-                sessionStorage.setItem("fea",this.featureChoose);
-                sessionStorage.setItem("feaIndex",index);
-            	console.log(sessionStorage.fea);
-                // addClass(fea[index],"active");
-                fea[index].style.color="#ff4d64";
-                fea[index].style.borderColor="#ff4d64";
+                sessionStorage.fea=index;
+                this.toggleClass(fea[index],"active");
             }
 		},
 		data(){
 			return{
-				choosen1: false,
-				choosen2: false,
+				choosen: false,
+				area:false,
+				fea: false,
 				areaChoose: "不限",
 				featureChoose: "不限",
 				address:[
@@ -108,7 +117,8 @@
 </script>
 <style type="text/css">
 	.active{
-		color: #ff4d64;
+		color: #ff4d64 !important;
+		border-color: #ff4d64 !important;
 	}
 	.filtrate-detail{
     	background-color: #fff;

@@ -13,5 +13,22 @@ new Vue({
   router,
   template: '<App/>',
   components: { App },
+  methods:{
+  	addClass: function(item,className){      
+				if(!element.className){ 
+					element.className=value; 
+			    } 
+				else{ 
+					newClassName=element.className; 
+					newClassName+=""; 
+					newClassName+=value; 
+					element.className=newClassName; 
+				} 
+			},
+	hasClass: function(obj, cls) {  
+			    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+			}, 
+  },
   render:h=>h(App)
 }).$mount('#app')
+

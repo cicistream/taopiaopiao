@@ -1,8 +1,8 @@
 <template>
     <div class="cinema">
 		<div class="content">
-			<div class="filtrate" :class="{'choosen':choose}">
-				<span>已选：{{areaChoose}} 、{{featureChoose}}</span>
+			<div class="filtrate" id="filtrate">
+				<span>已选：{{$route.query.areaChoose}}<span id="dot">、</span>{{$route.query.feaChoose}}</span>
 				<span @click="resetChoose">取消筛选</span>
 			</div>
 			<ul class="cinema-list">
@@ -24,25 +24,31 @@
 			foot
 		},
 		mounted:function(){
-	        this.choose=sessionStorage.choose;
-			if(this.choose){
-				console.log()
-	            this.areaChoose = sessionStorage.area;
-            	this.featureChoose = sessionStorage.fea;
-			}
+			setTimeout(()=>{
+				            var filtrate=document.getElementById("filtrate");
+							var dot=document.getElementById('dot');
+							console.log(this.$route.query.choose);
+							if(this.$route.query.choose){
+								if(sessionStorage.area!=0&&sessionStorage.fea!=0){
+									console.log(this.$route.query.fea);
+									dot.style.display="inline";
+								}
+								else {
+									dot.style.display="none";
+							    }
+								filtrate.style.display="flex";
+							}
+						},50)
 		},
 		methods:{
 			resetChoose: function(){
+				var filtrate=document.getElementById("filtrate");
+				filtrate.style.display="none";
 				sessionStorage.clear();
-                sessionStorage.choose=false;
-                this.choose=sessionStorage.choose;
 			}
 		},
 		data(){
 			return{
-				areaChoose:"",
-				featureChoose: "",
-				choose: false,
                 cinemaList:[
                     {
                     	name: "星美国际影商城上海松江店",
@@ -126,9 +132,6 @@
 	}
 </script>
 <style type="text/css" lang="less" scoped>
-    .choosen{
-    	display: block;
-    }
     .cinema{
     	font-size: 0.55rem;
     	color: #8a869e;

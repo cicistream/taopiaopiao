@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 374549 */
+  src: url('http://at.alicdn.com/t/font_cqpmf31dz3g6tj4i.eot');
+  src: url('http://at.alicdn.com/t/font_cqpmf31dz3g6tj4i.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_cqpmf31dz3g6tj4i.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_cqpmf31dz3g6tj4i.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_cqpmf31dz3g6tj4i.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.router-link-active{
+	color: #ff4d64 !important;
+}
+.dy-list-item{
+        color: #8a869e;
+        font-size: 0.5rem;
+        vertical-align: middle;
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+    }
+    .dy-info{
+        min-height: 3vmin;
+        padding: 0.55rem;
+        display: -webkit-flex;
+        -webkit-box-align: center;
+    }
+    .dy-poster{
+        width: 2.7rem;
+        height: 3.6rem;
+        position: relative;
+        margin-right: 0.23rem;
+    }
+    .dy-detail{
+        color: #928ea5;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        justify-content: center;
+    }
+    .dy-name{
+        color: #000;
+        font-size: 0.6rem;
+        display: inline-block;
+        margin-right: 0.3rem;
+    }
+    .dy-detail .iconfont{
+        font-size: 0.6rem;
+        line-height: 0.6rem;
+    }
+    .dy-detail .iconfont:nth-child(2){
+        line-height: 1rem;
+        word-spacing: 2px;
+    }
+    .dy-evaluate img{
+        width: 4%;
+    }
+    .dy-people{
+        font-size: 0.5rem;
+    }
+    .buy-btn{
+        font-size: 0.55rem;
+        border: 2px solid #ff4d64;
+        color: #ff4d64!important;
+        background-color: #fff;
+        border-radius: 8px;
+        text-align: center;
+        white-space: nowrap;
+        height: 7.5vmin;
+        padding: 2.7vmin;
+        padding-top: 1vmin;
+        margin-top: 40px;
+        transform:translateY(50%);
+    }
+    .city.brand{
+        background-image: url(../src/assets/logo.png);
+        background-size:50px 50px;
+        background-repeat: no-repeat;
+        background-position: 61px 30px; 
+        font-size: 0.55rem;
+        color: #928ea5;
+    }
+    .city{
+        width: 40%;
+        padding-left: 2.25rem;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 1.8rem;
+        height: 1.25rem;
+    }
+    .city .city-name{
+        vertical-align: middle;
+        display: inline-block;
+        max-width: 140px;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+    }

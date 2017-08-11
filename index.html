@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>taop</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+    (function(win,doc){
+          change();
+          function change(){
+              doc.documentElement.style.fontSize = doc.documentElement.clientWidth *20/320+'px';
+          }
+          win.addEventListener('resize',change,false);
+          win.addEventListener('orientationchange',change,false);  /* 这个是移动端设备横屏、竖屏转换时触发的事件处理函数 */
+    })(window,document);
+</script>
+</html>

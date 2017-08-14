@@ -24,21 +24,17 @@
 			foot
 		},
 		mounted:function(){
-			setTimeout(()=>{
-				            var filtrate=document.getElementById("filtrate");
-							var dot=document.getElementById('dot');
-							console.log(this.$route.query.choose);
-							if(this.$route.query.choose){
-								if(sessionStorage.area!=0&&sessionStorage.fea!=0){
-									console.log(this.$route.query.fea);
-									dot.style.display="inline";
-								}
-								else {
-									dot.style.display="none";
-							    }
-								filtrate.style.display="flex";
-							}
-						},50)
+            var filtrate=document.getElementById("filtrate");
+			var dot=document.getElementById('dot');
+			if(sessionStorage.show==1){
+				if(this.$route.query.area!=0&&this.$route.query.fea!=0){
+					dot.style.display="inline";
+				}
+				else {
+					dot.style.display="none";
+			    }
+				filtrate.style.display="flex";
+			}			
 		},
 		methods:{
 			resetChoose: function(){
@@ -146,7 +142,7 @@
         -webkit-box-orient: vertical;*/
     }
 	.filtrate{
-		display: flex;
+		display: none;
 		justify-content: space-between;
 		margin: auto 0.8rem;
 		line-height: 1.8rem;

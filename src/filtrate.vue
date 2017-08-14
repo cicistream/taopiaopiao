@@ -15,8 +15,8 @@
 			</div>
 			<div class="filtrate-btn">
 			    <div class="line"></div>
-		    	<router-link to="/cinema/cinemaAll" class="back" @click.native=cancelIt><p>取消筛选</p></router-link>
-			    <router-link :to="{path:'/cinema/cinemaAll',query: {areaChoose: areaChoose,feaChoose: featureChoose,choose: choosen,area: area,fea: fea}}" class="ok" @click.native=chooseIt><p>确定</p></router-link>
+		    	<span class="back" @click=cancelIt><p>取消筛选</p></span>
+			    <span class="ok" @click=chooseIt><p>确定</p></span>
 			</div>
 		</div>
 	</div>
@@ -50,57 +50,60 @@
 					element.className=newClassName; 
 				} 
 			},
-			removeClass: function(obj, cls) {  
-			    if (this.hasClass(obj, cls)) {  
-			        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
-			        var ci='';  
-			        obj.className = obj.className.replace(reg,ci);  
-			    }  
-			},  
-			hasClass: function(obj, cls) {  
-			    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
-			},
-			toggleClass: function(obj,cls){  
-			    if(this.hasClass(obj,cls)){  
-			        this.removeClass(obj, cls);  
-			    }else{  
-			        this.addClass(obj, cls);  
-			    }  
-			},  
+			// removeClass: function(obj, cls) {  
+			//     if (this.hasClass(obj, cls)) {  
+			//         var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+			//         var ci='';  
+			//         obj.className = obj.className.replace(reg,ci);  
+			//     }  
+			// },  
+			// hasClass: function(obj, cls) {  
+			//     return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+			// },
+			// toggleClass: function(obj,cls){  
+			//     if(this.hasClass(obj,cls)){  
+			//         this.removeClass(obj, cls);  
+			//     }else{  
+			//         this.addClass(obj, cls);  
+			//     }  
+			// },  
 			cancelIt:function(){
 				sessionStorage.clear();
-				this.$route.query.choose=false;
+				sessionStorage.show=0;
+				this.$router.push('cinemaAll');
 			}, 
 			chooseIt:function(){
-                if(!this.area) this.areaChoose='';
-                if(!this.fes) this.featureChoose='';
-				if(sessionStorage.area!=0||sessionStorage.fea!=0)
-                this.choosen=true;
+                if(!this.area) {this.areaChoose='';sessionStorage.area=-1;}
+                if(!this.fea)  {this.featureChoose='';sessionStorage.fea=-1;}
+				if(sessionStorage.area<0&&sessionStorage.fea<0)
+                {sessionStorage.show=0;}
+            	this.$router.push({name:'cinemaAll',query: {areaChoose: this.areaChoose,feaChoose: this.featureChoose,area: this.area,fea: this.fea}});
  			},
             chooseArea: function(address,index){
+            	sessionStorage.show=1;
             	this.area=true;
             	var area=document.getElementsByClassName("area-item1");
             	for (var i = area.length - 1; i >= 0; i--) {
-            		area[index].className="area-item1";
+            		area[i].className="area-item1";
             	}
                 this.areaChoose=address[index];
                 sessionStorage.area=index;
-            	this.toggleClass(area[index],"active");
+            	this.addClass(area[index],"active");
             },
             chooseFeature: function(features,index){
+            	sessionStorage.show=1;
             	this.fea=true;
             	var fea=document.getElementsByClassName("area-item2");
             	for (var i = fea.length - 1; i >= 0; i--) {
-            		this.removeClass(fea[index],"active");
+					fea[i].className="area-item2";
             	}
                 this.featureChoose=features[index];
                 sessionStorage.fea=index;
-                this.toggleClass(fea[index],"active");
+                this.addClass(fea[index],"active");
             }
 		},
 		data(){
 			return{
-				choosen: false,
 				area:false,
 				fea: false,
 				areaChoose: "不限",

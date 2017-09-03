@@ -1,0 +1,9 @@
+<view class="search">
+    <view class="searchFor">
+        <view class="search-area">
+            <text class="iconfont icon-sousuo"></text>
+            <input type="text" name="search" placeholder="影院名称或地址"></input>
+        </view>
+        <navigator url="../cinema" open-type="reLaunch" class="router-cancel"><text>取消</text></navigator>	
+    </view>
+</view>

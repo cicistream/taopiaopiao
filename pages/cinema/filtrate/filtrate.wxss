@@ -1,0 +1,66 @@
+@import "../../main.wxss";
+.Factive{
+    color: #ff4d64 !important;
+    border-color: #ff4d64 !important;
+}
+.filtrate-detail{
+    color: #8a869e;
+    background-color: #fff;
+    font-size: 28rpx;
+    padding:0 30rpx;
+    position: absolute;
+    z-index: 5;
+}
+.f-title{
+    color: #000;
+    font-weight: bold;
+    margin-right: 14rpx;
+}
+.f-choose{
+    list-style: none;
+    text-align: center;
+    line-height: 60rpx;
+    margin-bottom: 30rpx;
+    overflow: auto;
+}
+.area-item1,
+.area-item2{
+    border: 1px solid #CCC;
+    width: 150rpx; 
+    margin-top: 28rpx;
+    margin-right: 23rpx;
+    float: left;
+}
+.area-item1:nth-child(4n),
+.area-item2:nth-child(4n){
+    margin-right: 0;
+}
+.filtrate-btn{
+    position: fixed;
+    bottom: 0;
+    font-size: 32rpx;
+    text-align: center;
+    margin: 34rpx auto;
+}
+.line{
+    height: 4rpx;
+    margin-bottom: 30rpx;
+    background-color: #ccc;
+}
+.filtrate-btn .back,
+.filtrate-btn .ok{
+    color: #8a869e;
+    display: inline-block;
+    width: 260rpx;
+    float: left;
+    padding: 28rpx;
+    border: 1px solid #908ca3;
+    border-radius: 11rpx;
+}
+.filtrate-btn .ok{
+    display: inline-block;
+    background-color: #ff4d64;
+    border: 1px solid #ff4d64;
+    color: #fff;
+    margin-left: 56rpx;
+}

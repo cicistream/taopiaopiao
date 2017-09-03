@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/show/show",
+    "pages/cinema/cinema",
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/index/detail/detail",
+    "pages/cinema/filtrate/filtrate",
+    "pages/cinema/search/search"
+  ],
+  "tabBar": {
+    "color": "#8a869e",
+    "selectedColor": "#ff4d64",
+    "list": [
+        {   
+            "iconPath": "pages/images/movie.png",
+            "selectedIconPath" :"pages/images/movie2.png",
+            "pagePath": "pages/index/show/show",
+            "text": "电影"
+        },
+        {
+            "iconPath": "pages/images/cinema.png",
+            "selectedIconPath": "pages/images/cinema2.png",
+            "pagePath": "pages/cinema/cinema",
+            "text": "影院"
+        },
+        {
+            "iconPath": "pages/images/mine.png",
+            "selectedIconPath": "pages/images/mine2.png",            
+            "pagePath": "pages/mine/mine",
+            "text": "我的"
+        }
+    ]
+    }
+}

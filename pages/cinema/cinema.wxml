@@ -1,0 +1,24 @@
+<view class="cinema">
+    <view class="content">
+        <view class="cinemaHead">
+            <block>
+                <view class="cTitle" bindtap="filtrate"><icon class="iconfont icon-sousuo"></icon>筛选</view>
+                <view class="cTitle" bindtap="search"><icon class="iconfont icon-shaixuan" />搜索</view>
+            </block>
+        </view>
+        <view class="line"></view>
+        <view class="filtrate" id="filtrate" wx:if="{{show}}">
+            <text>已选：{{address[area]}}<text id="dot">、</text>{{features[feature]}}</text>
+            <text bindtap="resetChoose">取消筛选</text>
+        </view>
+        <view class="line"></view>
+        <view class="cinema-viewst">
+            <view class="cinema-item" wx:for="{{cinemaList}}" wx:key="index" wx:for-item="cinema">
+                <view><text class="ci-name text-elviewpsis-1">{{cinema.name}}</text><text class="ticket-price">{{cinema.price}}</text>元起</view>
+                <view class="ci-address text-elviewpsis-1">{{cinema.address}}</view>
+                <view><text class="ci-feature" wx:for="{{cinema.features}}" wx:key="index" wx:for-item="feature">{{feature.name}}</text></view>
+                <view class="promotion"><icon class="iconfont icon-xin" style="font-size: 0.8rem;color: #fe7a4c"></icon>新人专享</view>
+            </view>
+        </view>
+    </view>
+</view>

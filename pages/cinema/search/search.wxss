@@ -1,0 +1,35 @@
+@import "../../main.wxss";
+.search{
+    position: relative;
+    height: 795rpx;
+    background-color: #fff;
+    z-index: 8;
+}
+.searchFor{
+    font-size: 32rpx;
+    display: flex;
+    line-height: 56rpx;
+    border: 1px solid #ccc;
+}
+.search-area{
+    font-size: 32rpx;
+    flex: auto;
+    padding:5.6rpx 11.2rpx;
+    margin: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 30rpx;
+}
+input{
+    border: 0;
+    font-size: 28rpx;
+    position: absolute;
+    top: 30rpx;
+    left: 98rpx;
+}
+.router-cancel{
+    color: #108ee9;
+    flex:0 0 112rpx;
+    text-align: center;
+    padding-top: 22.4rpx;
+    padding-right: 11.2rpx;
+}

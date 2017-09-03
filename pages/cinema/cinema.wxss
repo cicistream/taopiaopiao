@@ -1,0 +1,57 @@
+@import "../main.wxss";
+.cinema{
+    font-size: 25rpx;
+    color: #8a869e;
+    padding-bottom: 84rpx;
+}
+.text-ellipsis-1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;*/
+}
+.filtrate{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 45rpx;
+    line-height: 80rpx;
+}
+.cinema-list{
+    border-top: 1px solid #CCC;
+}
+.cinema-item{
+    border-bottom: 1px solid #CCC;
+    padding:20rpx 35rpx;
+    font-size: 26rpx;
+}
+.ci-name{
+    color: #000;
+    font-size: 28rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+    margin-right: 22.5rpx;
+}
+.ticket-price{
+    font-size: 28rpx;
+    color: red;
+}
+.ci-address{
+    line-height: 50rpx;
+}
+.ci-feature{ 
+    color: #7ab5e0;
+    font-size: 22rpx;
+    line-height: 40rpx;
+    border: 1px solid #7ab5e0;
+    border-radius: 30%;
+    padding:5rpx 10rpx;
+    margin-right: 12rpx;
+}
+.promotion icon{
+    margin-right: 11rpx;
+    vertical-align: sub;
+}
+
+/* 筛选部分 */

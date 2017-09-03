@@ -1,0 +1,63 @@
+@import "../../main.wxss";
+#home{
+    height: 1000px;
+    margin-bottom: 40rpx;
+    overflow: hidden;
+}
+#home .iconfont{
+    font-size: 36rpx;
+}
+.slider-container{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 220rpx;
+    height: 40vmin;
+}
+.homeSlider{
+    font-size: 28rpx;
+    font-weight: bold;
+    height: 50rpx;
+    text-align: right;
+}
+.homeTitle{
+    margin-right: 60rpx;
+}
+.promotionSlide{
+    height: 300rpx;
+}
+.slide-image{
+    height: 100%;
+    width: 100%;
+}
+.dy-promotion{
+    font-size: 26rpx;
+    min-height: 10vmin;
+    margin-left: 165rpx;
+    line-height: 10vmin;
+    border-top: 1px solid #CCC;
+    overflow: hidden;
+}
+.line{
+    height: 1px;
+    background-color: #CCC;
+    margin-left: 24rpx;
+} 
+.activeLine{
+    width: 140rpx;
+    height: 3px;
+    background-color: #ff4d64;
+    margin-top:12rpx;
+    margin-left: 395rpx;
+    transition: 0.8s;
+}
+.activeMove{
+    transform: translateX(170rpx);
+}
+.starState{
+    position: absolute;
+    top: 80rpx;
+    width: 100rpx;
+    height: 40rpx;
+    z-index: 1;
+}

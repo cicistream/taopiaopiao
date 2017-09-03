@@ -1,0 +1,25 @@
+<view class="cinemaHead">   
+        <block>
+            <navigator class="cTitle" style="color: #ff4d64;" delta="1" open-type="navigateBack"><icon class="iconfont icon-sousuo"></icon>筛选</navigator>
+            <view class="cTitle" bindtap="search"><icon class="iconfont icon-shaixuan" />搜索</view>
+        </block>
+</view>
+<view class="filtrate-detail">
+    <view class="area">
+        <view><text class="f-title">区域</text><text class="{{area>=0?'Factive':''}}">{{address[area]||areaChoose}}</text></view>
+        <view class="f-choose">
+            <view class="area-item1 {{area==index ? 'Factive' : ''}}" wx:for="{{address}}" data-idx="{{index}}" wx:key="unique" bindtap="addressTab">{{item}}</view>
+        </view>
+    </view>
+    <view class="area">
+        <view><text class="f-title">特色</text><text class="{{fea>=0?'Factive':''}}">{{features[fea]||featureChoose}}</text></view>
+        <view class="f-choose">
+            <view class="area-item2 {{fea==index ? 'Factive' : ''}}" wx:for="{{features}}" data-index="{{index}}" wx:key="unique" wx:for-index="index" bindtap="featureTab">{{item}}</view>
+        </view>
+    </view>
+    <view class="filtrate-btn">
+        <view class="line"></view>
+        <view bindtap="cancel" class="back"><view>取消筛选</view></view>
+        <navigator url="../cinema" class="ok" open-type="reLaunch"><view>确定</view></navigator>
+    </view>
+</view>

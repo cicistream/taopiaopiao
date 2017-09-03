@@ -1,0 +1,129 @@
+.active{
+    color: #ff4d64 !important;
+}
+.dy-list-item{
+    color: #8a869e;
+    font-size: 26rpx;
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+}
+.dy-info{
+    min-height: 3vmin;
+    padding: 24rpx;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+}
+.dy-info image{
+    width: 130rpx;
+    height: 180rpx;
+    position: relative;
+    margin-right: 25rpx;
+}
+.dy-detail{
+    color: #928ea5;
+    -webkit-box-flex: 1;
+    flex: 1;
+    justify-content: center;
+    padding-top: 7rpx;
+}
+.dy-name{
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #000;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+.dy-detail .iconfont{
+    font-size: 36rpx;
+    line-height: 36rpx;
+}
+.dy-detail .iconfont:nth-child(2){
+    line-height: 56rpx;
+    word-spacing: 4rpx;
+}
+.dy-evaluate image{
+    width: 20rpx;
+    height: 20rpx;
+    margin: 0;
+}
+.buy-btn{
+    font-size: 24rpx;
+    border: 1px solid #ff4d64;
+    color: #ff4d64 !important;
+    background-color: #fff;
+    border-radius: 8rpx;
+    text-align: center;
+    white-space: nowrap;
+    height: 7.5vmin;
+    padding: 24rpx;
+    padding-top: 0;
+    margin-top: 40rpx;
+    transform:translateY(50%);
+}
+
+/* 影院页面筛选头部 */
+.cinemaHead{
+    color: #8a869e;
+    font-size: 26rpx;
+    font-weight: bold;
+    text-align: right;
+    padding: 16rpx;
+}
+.cTitle{
+    display: inline-block;
+    margin-right: 40rpx;
+}
+.cTitle icon{
+    margin-right: 6rpx;
+}
+.icon-shaixuan{
+    padding-left: 40rpx;
+    border-left: 1px solid #CCC;  
+}
+.line{
+    width: 100%;
+    height: 3rpx;
+    background-color: #ccc;
+}
+/* iconfont */
+
+@font-face {
+  font-family: 'iconfont';  /* project id 374549 */
+  src: url('//at.alicdn.com/t/font_cqpmf31dz3g6tj4i.eot');
+  src: url('//at.alicdn.com/t/font_cqpmf31dz3g6tj4i.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_cqpmf31dz3g6tj4i.woff') format('woff'),
+  url('//at.alicdn.com/t/font_cqpmf31dz3g6tj4i.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_cqpmf31dz3g6tj4i.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:32rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-3d:before { content: "\e63a"; }
+
+.icon-xin:before { content: "\e625"; }
+
+.icon-shaixuan:before { content: "\e686"; }
+
+.icon-max:before { content: "\e617"; }
+
+.icon-yingyuan:before { content: "\e67f"; }
+
+.icon-dianying:before { content: "\e628"; }
+
+.icon-taicijingxuan:before { content: "\e81c"; }
+
+.icon-muhouhuaxu:before { content: "\e81d"; }
+
+.icon-chupinfahang:before { content: "\e81e"; }
+
+.icon-wode:before { content: "\e621"; }
+
+.icon-sousuo:before { content: "\e660"; }
+

@@ -1,0 +1,186 @@
+@import "../../main.wxss";
+.info-content{
+    background-color: #fff;
+    position:relative;
+    z-index:10;
+}
+.info-head{
+    font-size: 28rpx;
+    color: #fff;
+    background-color: brown;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 650rpx;
+    height: 44vmin;
+    background-size: cover;
+    position: relative;
+    padding-top: 70rpx;
+}
+.info-poster{
+    flex-shrink: 0;
+    position: relative;
+    width: 400rpx;
+    width: 32vmin;
+    margin-left: 34rpx;
+    margin-right: 34rpx;
+    height: 100%;
+}
+.info-detail{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.info-title{
+    -webkit-box-flex: 1;
+}
+.info-name{
+    font-size: 30rpx;
+    color: #fff;
+    font-weight: bold;
+    line-height: 66rpx;
+}
+.info-describe{
+    line-height: 40rpx;
+    margin-bottom: 30rpx;
+}
+.info-describe image{
+    width: 2.5vmin;
+    height: 2.5vmin;
+}
+.info-sammary{
+    line-height: 67rpx;
+    font-size: 28rpx;
+    padding: 17rpx 30rpx;
+    padding-top: 30rpx;
+}
+.showIt.info-sammary{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp:3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.show-btn{
+    color: #0094ed;
+    font-size: 24rpx;
+    display: block;
+    text-align: center;
+    height: 80rpx;
+    margin: 40rpx auto;
+    margin-bottom: 0;
+}
+.section:before{
+    display: block;
+    background-color: #f5f5f5;
+    height: 33rpx;
+    content: "";
+}
+.info-people{
+    font-size: 28rpx;
+    text-align: center;
+    overflow: hidden;
+}
+.dy-infomation{
+    height: auto;
+    overflow: hidden;
+}
+.info-item-title{
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 112rpx;
+    line-height: 10vmin;
+    padding-top: 28rpx;
+    padding-top: 2.5vmin;
+    padding-bottom: 28rpx;
+    padding-bottom: 2.5vmin;
+    color: #000;
+    padding-left: 33rpx;
+    text-align: left;
+}
+.box{
+    height: 420rpx;
+    position: relative;
+    white-space: nowrap;
+}
+.box1{
+    position: relative;
+    white-space: nowrap;
+}
+.box-item,
+.box1-item{
+    width: 160rpx;
+    display:inline-block;
+    margin-left: 28rpx;
+    text-align: center;
+}
+.box1-item{
+    height: 280rpx;
+    width: 480rpx;
+    margin-left: 11rpx;
+}
+.box-item:first-child,
+.box1-item:first-child{
+    margin-left: 25rpx;
+}
+.box-item image{
+    display: block;
+    width: 160rpx;
+    height: 240rpx;
+}
+.text-ellipsis-1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 56rpx;
+}
+.info-extend{
+    text-align: center;
+    font-size: 22rpx;
+    color: #0094ed;
+    display: block;
+    margin: 33rpx auto;
+}
+.poster-show{
+    height: 280rpx;
+    width: 500rpx;
+}
+.info-back{
+    font-size: 26rpx;
+    display: inline-block;
+    float: left;
+    width: 45%;
+    display: flex;
+    padding: 16rpx;
+}
+.info-back icon{
+    font-size: 28rpx;
+    margin: auto 28rpx;
+}
+.s-detail{
+    color: #928ea5;
+    font-size:20rpx;
+    margin-top: 11rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp:1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.boxOffice{
+    display: flex;
+    text-align: center;
+    font-size: 24rpx;
+    justify-content: space-around;
+}
+.ranking{
+    flex: none;
+}
+.ranking view:first-child{
+    font-size: 50rpx;
+}
